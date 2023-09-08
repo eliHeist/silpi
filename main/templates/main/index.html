@@ -1,0 +1,186 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block content %}
+
+<section class="pb-20 pt-40">
+    <div class="container mx-auto">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
+                        <img class="object-scale-down w-full aspect-video"
+                            src="{% static 'images/car.png' %}"
+                            alt="">
+
+                        <div class="mt-6 grid justify-center justify-items-center text-center">
+                            <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
+                                Discover a world of vehicles! 
+                            </a>
+
+                            <p class="text-xl my-4 px-8">
+                                Whether you're looking to buy your dream car or simply need a reliable vehicle for rent, you've come to the right place.
+                                Buy or rent your perfect ride with us.
+                            </p>
+
+                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                                Read more
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
+                        <img class="object-cover w-full aspect-video"
+                            src="{% static 'images/consaltancy.webp' %}"
+                            alt="">
+
+                        <div class="mt-6 grid justify-center justify-items-center text-center">
+                            <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
+                                Expert Consultancy Services 
+                            </a>
+
+                            <p class="text-xl my-4">
+                                Unlock success with our expert consultancy services.
+                            </p>
+
+                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                                Read more
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
+                        <img class="object-cover w-full aspect-video"
+                            src="{% static 'images/farm-collage.webp' %}"
+                            alt="">
+
+                        <div class="mt-6 grid justify-center justify-items-center text-center">
+                            <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
+                                Farm Fresh Goodness 
+                            </a>
+
+                            <p class="text-xl my-4 px-8">
+                                Explore a bountiful harvest of fruits, adorable animals, and animal products straight from the farm to your table.
+                            </p>
+
+                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                                Read more
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+
+<!-- who we are -->
+<section class="bg-primary-400 p-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+    <h2 class="text-5xl uppercase font-semibold mb-4">Who are we?</h2>
+    <p class="text-lg text-justify">
+        At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights to reliable vehicles and expert guidance, we're your one-stop destination for quality and excellence. Join us as we cultivate flavors, drive innovation, and nurture your aspirations.
+    </p>
+</section>
+
+<!-- categories -->
+<section class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-3xl text-center pb-20">Browse our Product options</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for category in categories %}
+            <article class="p-8 rounded-lg bg-gray-100">
+                <img src="{{ category.thumbnail.url }}" alt="" class="object-cover w-full aspect-[4/3] rounded-md">
+                <div class="mt-2">
+                    <a href="{% url 'products:products-by-category' category.pk %}" class="text font-semibold">{{ category.name }} <i class="fas fa-arrow-right-long ml-2"></i></a>
+                </div>
+                
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- delivery -->
+<section class="bg-white p-20 mt-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+    <h2 class="text-5xl font-semibold">Delivery</h2>
+    <p class="text-lg">
+        We offer free delivery services for orders in the Central region. Orders outside the central region pay a variable delivery charge (according to location).
+    </p>
+</section>
+
+<!-- consultancy -->
+<section class="bg-primary-500 text-white p-20 mt-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+    <h2 class="text-5xl font-semibold">Consultancy</h2>
+    <p class="text-lg">
+        We offer free delivery services for orders in the Central region. Orders outside the central region pay a variable delivery charge (according to location).
+    </p>
+</section>
+
+<!-- get in touch -->
+<section class="py-20">
+    <div class="container mx-auto">
+        <h2 class="text-5xl text-center mb-16">Get in Touch</h2>
+        <ul class="grid justify-center sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center">
+            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i class="fas fa-clock w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+                <span>Daily 7:00 AM — 6:00 PM</span>
+            </li>
+            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i class="fas fa-location-dot w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+                <a>PLOT 550, Seeta - Nabuuta</a>
+            </li>
+            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i class="fas fa-phone w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+                <a href="tel:+256772601644">+256 772 601644</a>
+            </li>
+            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i class="fas fa-envelope-open w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+                <a href="mailto:silpi@gmail.com">silpi@gmail.com</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper', {
+        loop: true, // Enable infinite loop
+        slidesPerView: 1, // Number of slides to show at once
+        spaceBetween: 20, // Space between slides
+        // pagination: {
+        //     el: '.swiper-pagination', // Pagination container
+        //     clickable: true, // Allow clicking on pagination bullets
+        // },
+        navigation: {
+            nextEl: '.swiper-button-next', // Next button
+            prevEl: '.swiper-button-prev', // Previous button
+        },
+        autoplay: {
+            delay: 10000, // Auto-play interval in milliseconds (3 seconds in this example)
+            disableOnInteraction: false, // Continue auto-play even when user interacts with the slider
+        },
+    });
+</script>
+
+{% endblock scripts %}

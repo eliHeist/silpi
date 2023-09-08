@@ -1,0 +1,79 @@
+{% load static %}
+
+<header>
+    <!-- Navbar -->
+    <nav class="flex justify-around py-3 bg-white/90
+    backdrop-blur-md shadow-md w-full
+    fixed top-0 left-0 right-0 z-10">
+
+        <!-- Logo Container -->
+        <div class="flex items-center">
+            <!-- Logo -->
+            <a class="cursor-pointer">
+                <h3 class="text-2xl font-medium text-blue-500">
+                    <img class="h-16 object-cover" src="{% static 'images/logo.png' %}" alt="Store Logo">
+                </h3>
+            </a>
+        </div>
+
+        <!-- Links Section -->
+        <div class="items-center hidden space-x-8 lg:flex">
+            <a href="/" class="flex text-gray-600 hover:text-blue-500
+            cursor-pointer transition-colors duration-300">
+                Home
+            </a>
+
+            <div
+                class="flex text-gray-600            cursor-pointer transition-colors duration-300 relative items-center gap-3 group min-w-fit">
+                Services <i class="fas fa-angle-down"></i>
+                <div
+                    class="absolute top-0 opacity-0 pointer-events-none group-hover:top-full group-hover:opacity-100 group-hover:pointer-events-auto p-6 outline outline-1 rounded-sm bg-white grid grid-cols-2 gap-3 min-w-[30rem]">
+                    <div class="grid gap-2">
+                        <h3 class="font-bold">Consultancy</h3>
+                        <a href="{% url 'consultancy:consultancy' %}" class="flex text-gray-600 cursor-pointer transition-colors duration-300 hover:text-blue-600">
+                            Consultancy
+                        </a>
+                        <a href="{% url 'consultancy:portfolio' %}" class="flex text-gray-600 cursor-pointer transition-colors duration-300 hover:text-blue-600">
+                            Portfolio
+                        </a>
+                    </div>
+
+                    <div class="grid gap-2">
+                        <h3 class="font-bold">Vehicles</h3>
+                        <a class="flex text-gray-600 
+                    cursor-pointer transition-colors duration-300
+                hover:text-blue-600">
+                        Vehicles
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="{% url 'products:categories' %}" class="flex text-gray-600 
+            cursor-pointer transition-colors duration-300
+         hover:text-blue-600">
+                Farm Products
+            </a>
+
+            <a href="{% url 'main:about' %}" class="flex text-gray-600 hover:text-blue-500
+            cursor-pointer transition-colors duration-300">
+                About Us
+            </a>
+
+            <a href="{% url 'contact:main-page' %}" class="flex text-gray-600 hover:text-blue-500
+            cursor-pointer transition-colors duration-300">
+                Contact Us
+            </a>
+        </div>
+
+        <!-- Icon Menu Section -->
+        <div class="flex items-center space-x-5">
+            <!-- Browse Products -->
+            <a href="{% url 'cart:checkout' %}" class="">
+                <i class="fa-solid fa-cart-shopping relative text-2xl hover:text-primary-400">
+                    <!-- <span class="absolute text-xs left-1/2 top-1/2 bg-white rounded-full aspect-square w-4 grid place-content-center outline outline-black outline-1"></span> -->
+                </i>
+            </a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="pt-40 pb-20" x-data="$store.checkout" x-init="init()">
+    <div class="container mx-auto p-4 bg-white rounded-lg shadow-lg grid md:grid-cols-2 gap-4">
+        <!-- Left Column (Cart Items) -->
+        <div class="p-4 border-r grid">
+            <h2 class="text-xl font-semibold mb-4">Your Cart</h2>
+            <div>
+                <template x-for="item in items">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="grid grid-flow-col gap-4 items-center">
+                            <img :src="item.image" class="aspect-square object-cover w-12">
+                            <p class="text-gray-800" x-text="item.name"></p>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <p class="text-gray-600">
+                                <span x-text="item.price.toLocaleString()"></span>
+                                x
+                                <span x-text="item.quantity"></span>
+                            </p>
+                            <button @click="removeFromCart(item.id)" class="text-red-500 hover:text-red-700"><i
+                                    class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="flex justify-between mt-auto rounded-sm outline outline-1 p-2">
+                <p class="font-semibold">Total</p>
+                <p class="">UGX <span x-text="total.toLocaleString()"></span></p>
+            </div>
+        </div>
+
+        <!-- Right Column (Checkout Form) -->
+        <div class="p-4">
+            <h2 class="text-xl font-semibold mb-4">Checkout</h2>
+            <form @submit="(event) => {checkout(event)}">
+                <div id="token">{% csrf_token %}</div>
+                <!-- Email -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none" x-model="email" required>
+                </div>
+
+                <!-- Phone (Optional) -->
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 font-medium">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none"
+                        x-model="phone">
+                </div>
+
+                <!-- Terms and Conditions Checkbox -->
+                <div class="mb-4">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" x-model="agreeToTerms" class="form-checkbox text-blue-500">
+                        <span class="ml-2 text-gray-700">I agree to the Terms and Conditions</span>
+                    </label>
+                </div>
+
+                <!-- Checkout Button (Enabled when checkbox is checked) -->
+                <button type="submit" x-bind:disabled="!agreeToTerms"
+                    class="w-full  text-white py-2 px-4 rounded-lg focus:outline-none"
+                    :class="!agreeToTerms ? 'bg-gray-700 hover:bg-gray-700' : 'bg-blue-500 hover:bg-blue-600'">Checkout</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('checkout', {
+            items: [
+                // {% for item in cart_items %}
+                { "id": Number("{{ item.id }}"), "quantity": Number("{{ item.quantity }}"), "price": Number("{{ item.price }}"), "name": "{{ item.name }}", "image": "{{ item.image }}", "pdt_pk": Number("{{ item.pdt_pk }}") }
+                // {% endfor %}
+            ],
+            agreeToTerms: false,
+            email: '',
+            phone: '',
+            total: 0,
+            csrf() {
+                const field = document.getElementById('token')?.firstElementChild
+                return field.value;
+            },
+            async checkout(event) {
+                event.preventDefault()
+                const obj = { items: this.items, email: this.email, phone: this.phone }
+
+                console.log(obj);
+
+                const response = await fetch("{% url 'cart:api-checkout' %}", {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': this.csrf(),
+                    },
+                    body: JSON.stringify(obj),
+                })
+                const data = await response.json()
+                if (data.done){
+                    window.location.href = data.url
+                }
+            },
+            // Function to calculate the total
+            calculateTotal() {
+                this.total = this.items.reduce((accumulator, item) => accumulator + (item.quantity * item.price), 0);
+            },
+
+            // Initialize the data and set up a watcher
+            init() {
+                this.calculateTotal();
+                this.$watch('items', () => {
+                    this.calculateTotal();
+                });
+            },
+        });
+    })
+
+</script>
+{% endblock %}

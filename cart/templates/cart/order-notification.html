@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Inline CSS styles for email */
+        /* Add your inline styles here */
+    </style>
+</head>
+<body>
+    <h2>New Order Details:</h2>
+    <p>User Email: {{ user_email }}</p>
+    <p>User Phone: {{ user_phone }}</p>
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item.name }} (Quantity: {{ item.quantity }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
