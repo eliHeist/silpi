@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static tailwind_filters %}
+
+
+{% block styles %}{% endblock styles %}
+
+
+{% block content %}
+<header class="bg-primary-400 pb-20 pt-40">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-semibold text-white">Vehicles</h1>
+        <p class="text-lg text-gray-200">Vehicles for both hire and sale.</p>
+    </div>
+</header>
+
+<section class="py-20">
+    <div class="container mx-auto">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {% for vehicle in vehicles %}
+                <a href="{% url 'vehicles:request' vehicle.pk %}">
+                    <article class="grid p-2 rounded-md transition-all hover:bg-gray-200 hover:shadow-md hover:scale-105 duration-500">
+                        <img src="{{ vehicle.image.url }}" class="w-full aspect-video object-cover">
+                        <h3 class="font-semibold mt-2"><span>{{ vehicle.make }}</span>. <span>{{ vehicle.model }}</span></h3>
+                        <p>{{ vehicle.year }}</p>
+                        <p>Available for {{ vehicle.actions }}</p>
+                    </article>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block scripts %}{% endblock scripts %}

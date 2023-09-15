@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <main style="padding: 2rem 1rem;background-color: #150578;color: #d1cfd8;display: grid;gap: 1.2rem;font-family: poppins, sans-serif;">
+        <h2 style="color: #449DD1;font-weight: 900;font-size: 1.5rem;">New Vehicle Request Details:</h2>
+        <div>
+            <p>Action: {{ order.action }}</p>
+            <p>Vehicle: {{ order.vehicle.make }}. {{ order.vehicle.model }}</p>
+            <p>Year: {{ order.vehicle.year }}</p>
+            <p>Details: {{ order.vehicle.more_details }}</p>
+        </div>
+        <div>
+            <p>Client Name: {{ order.name }}</p>
+            <p>Client Email: {{ order.email }}</p>
+            <p>Client Phone: {{ order.phone }}</p>
+        </div>
+    </main>
+</body>
+
+</html>

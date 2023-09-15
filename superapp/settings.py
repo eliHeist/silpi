@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'consultancy',
+    'vehicles',
+    'contact',
 ]
 
 # django cleanup should be last

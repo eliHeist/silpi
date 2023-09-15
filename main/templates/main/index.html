@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<!-- slider -->
 <section class="pb-20 pt-40">
     <div class="container mx-auto">
         <!-- Slider main container -->
@@ -12,21 +13,21 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                     <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-scale-down w-full aspect-video"
-                            src="{% static 'images/car.png' %}"
-                            alt="">
+                        <img class="object-scale-down w-full aspect-video" src="{% static 'images/car.png' %}" alt="">
 
                         <div class="mt-6 grid justify-center justify-items-center text-center">
                             <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
-                                Discover a world of vehicles! 
+                                Discover a world of vehicles!
                             </a>
 
                             <p class="text-xl my-4 px-8">
-                                Whether you're looking to buy your dream car or simply need a reliable vehicle for rent, you've come to the right place.
+                                Whether you're looking to buy your dream car or simply need a reliable vehicle for rent,
+                                you've come to the right place.
                                 Buy or rent your perfect ride with us.
                             </p>
 
-                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                            <a href="#"
+                                class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
                                 Read more
                                 <i class="fas fa-arrow-right ml-3"></i>
                             </a>
@@ -35,20 +36,20 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-cover w-full aspect-video"
-                            src="{% static 'images/consaltancy.webp' %}"
+                        <img class="object-cover w-full aspect-video" src="{% static 'images/consaltancy.webp' %}"
                             alt="">
 
                         <div class="mt-6 grid justify-center justify-items-center text-center">
                             <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
-                                Expert Consultancy Services 
+                                Expert Consultancy Services
                             </a>
 
                             <p class="text-xl my-4">
                                 Unlock success with our expert consultancy services.
                             </p>
 
-                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                            <a href="#"
+                                class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
                                 Read more
                                 <i class="fas fa-arrow-right ml-3"></i>
                             </a>
@@ -57,20 +58,21 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-cover w-full aspect-video"
-                            src="{% static 'images/farm-collage.webp' %}"
+                        <img class="object-cover w-full aspect-video" src="{% static 'images/farm-collage.webp' %}"
                             alt="">
 
                         <div class="mt-6 grid justify-center justify-items-center text-center">
                             <a class="block mt-4 text-2xl font-bold text-gray-800 md:text-3xl lg:text-7xl">
-                                Farm Fresh Goodness 
+                                Farm Fresh Goodness
                             </a>
 
                             <p class="text-xl my-4 px-8">
-                                Explore a bountiful harvest of fruits, adorable animals, and animal products straight from the farm to your table.
+                                Explore a bountiful harvest of fruits, adorable animals, and animal products straight
+                                from the farm to your table.
                             </p>
 
-                            <a href="#" class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
+                            <a href="#"
+                                class="inline-block mt-2 text-white bg-primary-400 hover:bg-primary-300 px-8 py-4 rounded-lg">
                                 Read more
                                 <i class="fas fa-arrow-right ml-3"></i>
                             </a>
@@ -89,44 +91,99 @@
 </section>
 
 <!-- who we are -->
-<section class="bg-primary-400 p-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-    <h2 class="text-5xl uppercase font-semibold mb-4">Who are we?</h2>
-    <p class="text-lg text-justify">
-        At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights to reliable vehicles and expert guidance, we're your one-stop destination for quality and excellence. Join us as we cultivate flavors, drive innovation, and nurture your aspirations.
-    </p>
-</section>
-
-<!-- categories -->
-<section class="py-20">
-    <div class="container mx-auto">
-        <h2 class="text-3xl text-center pb-20">Browse our Product options</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for category in categories %}
-            <article class="p-8 rounded-lg bg-gray-100">
-                <img src="{{ category.thumbnail.url }}" alt="" class="object-cover w-full aspect-[4/3] rounded-md">
-                <div class="mt-2">
-                    <a href="{% url 'products:products-by-category' category.pk %}" class="text font-semibold">{{ category.name }} <i class="fas fa-arrow-right-long ml-2"></i></a>
-                </div>
-                
-            </article>
-            {% endfor %}
-        </div>
+<section class="container mx-auto px-4">
+    <div class="bg-primary-400 px-8 py-20 rounded-2xl md:text-center">
+        <h2 class="text-5xl font-semibold mb-6">Who are we?</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+            At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights
+            to reliable vehicles and expert guidance, we're your one-stop destination for quality and excellence. Join
+            us as we cultivate flavors, drive innovation, and nurture your aspirations.
+        </p>
     </div>
 </section>
 
-<!-- delivery -->
-<section class="bg-white p-20 mt-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-    <h2 class="text-5xl font-semibold">Delivery</h2>
-    <p class="text-lg">
-        We offer free delivery services for orders in the Central region. Orders outside the central region pay a variable delivery charge (according to location).
-    </p>
-</section>
+<!-- services -->
+<div class="container mx-auto py-20 grid gap-16">
+    <!-- consultancy -->
+    <section class="grid gap-8 md:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+            <img class="w-full" src="{% static 'images/strategic-consulting-concept-illustration.jpg' %}" alt="">
+        </div>
+        <div>
+            <h2 class="text-5xl font-semibold mb-8">Consultancy</h2>
+            <p class="text-lg">
+                Our consultancy services are designed to provide expert guidance and solutions to individuals and
+                businesses. Whether you need strategic advice, process optimization, or specialized expertise, we have a
+                team of experienced consultants ready to assist you.
+            </p>
+            <div class="mt-4 flex gap-8 flex-wrap">
+                <a href="{% url 'consultancy:portfolio' %}" class="text-primary-500 hover:text-primary-400 group"><i class="fas fa-list mr-2"></i>View Portfolio </a>
+                <a href="{% url 'consultancy:consultancy' %}" class="text-primary-500 hover:text-primary-400 group">Find out more <i class="fas fa-arrow-right-long ml-2 transition-all group-hover:ml-4"></i></a>
+            </div>
+        </div>
+    </section>
 
-<!-- consultancy -->
-<section class="bg-primary-500 text-white p-20 mt-20 rounded-2xl container mx-auto grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-    <h2 class="text-5xl font-semibold">Consultancy</h2>
-    <p class="text-lg">
-        We offer free delivery services for orders in the Central region. Orders outside the central region pay a variable delivery charge (according to location).
+    <!-- micro lending -->
+    <section class="grid gap-8 md:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+            <img class="w-full" src="{% static 'images/huge-hand-giving-money.jpg' %}" alt="">
+        </div>
+        <div>
+            <h2 class="text-5xl font-semibold mb-8">Micro Lending</h2>
+            <p class="text-lg">
+                We offer micro-lending services tailored to small businesses and entrepreneurs. Whether you're looking
+                to start or expand your business, our micro-loans provide the financial support you need without the
+                complexities of traditional loans.
+            </p>
+            <div class="mt-4 flex gap-8 flex-wrap">
+                <a href="{% url 'main:micro-loans' %}" class="text-primary-500 hover:text-primary-400 group">Find out more <i class="fas fa-arrow-right-long ml-2 transition-all group-hover:ml-4"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- farming and agriculture -->
+    <section class="grid gap-8 md:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+            <img class="w-full" src="{% static 'images/hand-drawn-illustrated-farming.jpg' %}" alt="">
+        </div>
+        <div>
+            <h2 class="text-5xl font-semibold mb-8">Farming and Agriculture</h2>
+            <p class="text-lg">
+                Our farming services encompass the cultivation and sale of a wide range of agricultural products,
+                including fruits, vegetables, livestock, and animal meat. We are committed to sustainable farming
+                practices and delivering high-quality products to our customers.
+            </p>
+            <div class="mt-4 flex gap-8 flex-wrap">
+                <a href="{% url 'products:categories' %}" class="text-primary-500 hover:text-primary-400 group">Find out more <i class="fas fa-arrow-right-long ml-2 transition-all group-hover:ml-4"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles for Sale and Hire -->
+    <section class="grid gap-8 md:grid-cols-2 lg:gap-16 lg:items-center">
+        <div>
+            <img class="w-full" src="{% static 'images/rental-car-service.jpg' %}" alt="">
+        </div>
+        <div>
+            <h2 class="text-5xl font-semibold mb-8">Vehicles for Sale and Hire</h2>
+            <p class="text-lg">
+                We offer a diverse range of vehicles for both sale and hire. Whether you're looking to purchase a
+                reliable vehicle or need a rental for a specific purpose, our fleet includes a variety of options to
+                meet your transportation needs.
+            </p>
+            <div class="mt-4 flex gap-8 flex-wrap">
+                <a href="{% url 'vehicles:list' %}" class="text-primary-500 hover:text-primary-400 group">Find out more <i class="fas fa-arrow-right-long ml-2 transition-all group-hover:ml-4"></i></a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- delivery -->
+<section class="bg-white mt-20 py-20 px-4 text-center">
+    <h2 class="text-5xl font-semibold mb-6">Delivery</h2>
+    <p class="text-lg max-w-2xl mx-auto">
+        We offer free delivery services for orders in the Central region. Orders outside the central region will be charged with a
+        variable delivery charge (according to location).
     </p>
 </section>
 
@@ -135,20 +192,28 @@
     <div class="container mx-auto">
         <h2 class="text-5xl text-center mb-16">Get in Touch</h2>
         <ul class="grid justify-center sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:justify-items-center">
-            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
-                <i class="fas fa-clock w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+            <li
+                class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i
+                    class="fas fa-clock w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
                 <span>Daily 7:00 AM — 6:00 PM</span>
             </li>
-            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
-                <i class="fas fa-location-dot w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+            <li
+                class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i
+                    class="fas fa-location-dot w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
                 <a>PLOT 550, Seeta - Nabuuta</a>
             </li>
-            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
-                <i class="fas fa-phone w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+            <li
+                class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i
+                    class="fas fa-phone w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
                 <a href="tel:+256772601644">+256 772 601644</a>
             </li>
-            <li class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
-                <i class="fas fa-envelope-open w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
+            <li
+                class="grid grid-flow-col items-center justify-start gap-4 p-1 hover:outline outline-1 outline-gray-300 rounded-md">
+                <i
+                    class="fas fa-envelope-open w-10 aspect-square grid place-content-center bg-primary-600 rounded-lg text-primary-300"></i>
                 <a href="mailto:silpi@gmail.com">silpi@gmail.com</a>
             </li>
         </ul>
@@ -162,6 +227,7 @@
 {% endblock %}
 
 {% block scripts %}
+<!-- <a href="https://www.freepik.com/free-vector/rental-car-service-abstract-concept-illustration_11667639.htm#query=Vehicles%20for%20Sale%20and%20Hire&position=34&from_view=search&track=ais">Image by vectorjuice</a> on Freepik -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper', {
