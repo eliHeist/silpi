@@ -25,7 +25,7 @@
                     </p>
                     <p><span class="font-semibold">Available for</span> {{ vehicle.actions }}</p>
                     <h4 class="font-semibold mt-2">More Details:</h4>
-                    <p>{{ vehicle.more_details }}</p>
+                    <p>{{ vehicle.more_details|safe }}</p>
                 </div>
             </div>
             <div>
