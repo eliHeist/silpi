@@ -30,8 +30,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'crispy_tailwind',
+    'ckeditor',
 
-    'services',
+    'posts',
     'accounts',
     'main',
     'products',
@@ -177,3 +178,15 @@ AUTH_USER_MODEL = 'accounts.User'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_SAVE_EVERY_REQUEST = False
+
+CKEDITOR_UPLOAD_PATH = "uploads/"  # Specify the upload path for media files
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',  # Enable all toolbar features
+        'font_names': 'Poppins',  # Set default font to Poppins
+        'fontSize_sizes': '1rem/1rem',  # Set default font size to 1rem
+        'height': 300,  # Set the height of the editor
+        'width': '100%',  # Set the width of the editor to 100%
+        # Other CKEditor configurations if needed
+    },
+}

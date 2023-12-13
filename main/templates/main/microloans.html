@@ -3,9 +3,36 @@
 
 {% block content %}
 
-<main class="pt-40 pb-20">
-    <!-- code here -->
-</main>
+<section class="pb-20">
+    <header class="bg-primary-700 relative">
+        <img src="{% static 'images/black-businessman-using-computer-laptop.webp' %}" class=" w-full max-h-screen aspect-square sm:aspect-[4/3] object-cover">
+        <div class="sm:absolute top-0 left-0 w-full h-full grid md:grid-cols-2 md:justify-end xl:content-center xl:justify-end">
+            <div class="bg-white sm:bg-black/70 lg:bg-white/80 sm:text-white lg:text-primary-900 p-8 text-lg md:text-xl lg:text-2xl xl:text-3xl lg:p-12 w-full grid place-content-center md:col-span-2 md:w-1/2 ml-auto">
+                <svg class="h-16 fill-primary-500 mb-4" viewBox="0 0 161.18 120.55"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M0,67.6C0,19.31,26,1.33,67.6,0l5,24.31C50.28,27,39.29,37.63,40.29,55.61H64.94v64.94H0Zm88.25,0c0-48.29,26.31-66.27,67.6-67.6l5.33,24.31c-22.31,2.66-33.3,13.32-32.63,31.3h24.64v64.94H88.25Z"/></g></g></svg>
+                <p class="text-center max-w-lg mx-auto">
+                    At SLK Initiatives Limited, we believe in empowering our clients with knowledge and financial solutions. Our comprehensive loan offerings cater to a variety of needs, ensuring that you can achieve your goals with confidence as an individual or a business. <br>Explore our loan options to find out more.
+                </p>
+            </div>
+            <svg class="hidden fill-white h-16 mx-auto transition-all hover:scale-110" viewBox="0 0 191.23 191.23"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1 fill-white" cx="95.61" cy="95.61" r="95.61"/><path class="cls-2 fill-white" d="M132.2,94.28,95.61,133.92,59,94.28a7.37,7.37,0,0,0-5.41-2.37h0a7.37,7.37,0,0,0-5.41,12.36l47.41,51.39L143,104.27a7.37,7.37,0,0,0-5.41-12.36h0A7.37,7.37,0,0,0,132.2,94.28Z"/><rect class="cls-2 fill-white" x="86.45" y="35.57" width="18.32" height="104.92" rx="9.16" ry="9.16"/></g></g></svg>
+        </div>
+    </header>
+    <main class="pt-16">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3">
+                <article class="bg-white rounded-md p-8">
+                    <h3 class="text-4xl">Personal Loans</h3>
+                    <p class="lg:text-xl mt-6">
+                        Whether you're planning a dream vacation, covering unexpected expenses, or consolidating debt, our personal loans provide the flexibility and financial support you need.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </main>
+</section>
+
+<section class="hidden">
+    <a href="https://www.freepik.com/free-photo/black-businessman-using-computer-laptop_2892713.htm#query=finance%20expert&position=25&from_view=search&track=ais&uuid=1fb48dd2-34a2-405a-868e-cf2045ef4ac7">Image by rawpixel.com</a> on Freepik
+</section>
 
 {% endblock content %}
 

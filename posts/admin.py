@@ -1,9 +1,6 @@
 from django.contrib import admin
-
-from vehicles.models import Vehicle
 from accounts.admin import user_admin
-
+from posts.models import Post
 # Register your models here.
-admin.site.register(Vehicle)
 
-user_admin.register(Vehicle)
+user_admin.register(Post)

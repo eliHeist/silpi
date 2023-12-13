@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<main class="py-20">
+
+    <div class="max-w-screen-md mx-auto px-4">
+        <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+        <h2 class="head__3 mt-2">{{ post.title }}</h2>
+        <p class="bg-primary-100 text-primary-800 w-fit text-xs px-2 py-1 rounded-md font-medium">
+            <span>{{ post.date_posted }}</span>
+            <i class="fas fa-calendar ml-2"></i>
+        </p>
+        <p class="mt-6">{{ post.details|safe }}</p>
+    </div>
+</main>
+{% endblock content %}

@@ -6,51 +6,61 @@
 
 {% block content %}
 
-<section class="pb-20 pt-40">
+<section class="pb-20 pt-20">
     <div class="container mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="grid">
+        <div class="grid gap-8">
+            <div class="grid md:grid-cols-2 gap-4">
                 <img src="{{ vehicle.image.url }}" alt="">
-                <h3 class="font-semibold mt-2 mb-3 text-lg"><span>{{ vehicle.make }}</span>. <span>{{ vehicle.model }}</span></h3>
-                <p>
-                    <span class="font-semibold mr-2">Year:</span>
-                    <span>{{ vehicle.year }}</span>
-                </p>
-                <p>
-                    <span class="font-semibold mr-2">Condition:</span>
-                    <span>{{ vehicle.condition }}</span>
-                </p>
-                <p><span class="font-semibold">Available for</span> {{ vehicle.actions }}</p>
-                <h4 class="font-semibold mt-2">More Details:</h4>
-                <p>{{ vehicle.more_details }}</p>
+                <div>
+                    <h3 class="font-semibold mt-2 mb-3 text-lg"><span>{{ vehicle.make }}</span>. 
+                        <span>{{ vehicle.model }}</span>
+                    </h3>
+                    <p>
+                        <span class="font-semibold mr-2">Year:</span>
+                        <span>{{ vehicle.year }}</span>
+                    </p>
+                    <p>
+                        <span class="font-semibold mr-2">Condition:</span>
+                        <span>{{ vehicle.condition }}</span>
+                    </p>
+                    <p><span class="font-semibold">Available for</span> {{ vehicle.actions }}</p>
+                    <h4 class="font-semibold mt-2">More Details:</h4>
+                    <p>{{ vehicle.more_details }}</p>
+                </div>
             </div>
             <div>
-                <form class="grid items-start gap-8" method="post">
+                <form class="flex flex-wrap items-end justify-center gap-8 w-fit" method="post">
                     {% csrf_token %}
                     <div class="grid items-start gap-2">
-                        <label for="name" class="font-semibold">Full Name *</label>
-                        <input type="text" name="name" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400" required>
-                    </div>   
+                        <label for="name" class="font-semibold">Name *</label>
+                        <input type="text" name="name" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400"
+                            required>
+                    </div>
                     <div class="grid items-start gap-2">
                         <label for="email" class="font-semibold">Email *</label>
-                        <input type="email" name="email" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400" required>
-                    </div>   
+                        <input type="email" name="email" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400"
+                            required>
+                    </div>
                     <div class="grid items-start gap-2">
                         <label for="phone" class="font-semibold">Phone *</label>
-                        <input type="tel" name="phone" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400" required>
-                    </div>   
+                        <input type="tel" name="phone" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400"
+                            required>
+                    </div>
                     <div class="grid items-start gap-2">
-                        <label for="action" class="font-semibold">I want to *</label>
+                        <label for="action" class="font-semibold">Action *</label>
                         <select name="action" class="px-4 py-2 rounded-md outline outline-1 outline-gray-400">
                             {% if vehicle.actions == 'Hire' or vehicle.actions == 'Hire & Purchase' %}
-                                <option value="Hire">Hire</option>
+                            <option value="Hire">Hire</option>
                             {% endif %}
                             {% if vehicle.actions == 'Purchase' or vehicle.actions == 'Hire & Purchase' %}
-                                <option value="Purchase">Purchase</option>
+                            <option value="Purchase">Purchase</option>
                             {% endif %}
                         </select>
-                    </div>   
-                    <button type="submit" class="bg-primary-400 rounded-md p-3">Send Request</button>
+                    </div>
+                    <button type="submit" class="px-6 py-2 bg-primary-500 w-fit text-white font-semibold">
+                        Request a Quote
+                        <i class="fas fa-arrow-right-long ml-3"></i>
+                    </button>
                 </form>
             </div>
         </div>

@@ -3,6 +3,7 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.shortcuts import redirect, render
 from django.views import View
+from contact.models import Receipient
 
 from vehicles.models import Vehicle, VehicleOrderRequest
 
@@ -46,19 +47,19 @@ class VehicleRequestView(View):
             'New Order',
             '',
             settings.DEFAULT_FROM_EMAIL,  # Replace with your email
-            settings.TO_EMAILS,  # Replace with your recipient emails
+            [r.email for r in Receipient.objects.all()],  # Replace with your recipient emails
             html_message=to_emails_message,
         )
 
         # Render the user email template
-        user_message = render_to_string('vehicles/order-confirmation-user.html', {'order':order})
+        user_message = render_to_string('vehicles/order-confirmation-user.html', {'email':order.email})
 
         # Send confirmation email to the user
         send_mail(
             'Order Confirmation',
             '',
             settings.DEFAULT_FROM_EMAIL,  # Replace with your email
-            [request.data['email']],
+            [order.email],
             html_message=user_message,
             fail_silently=False,
         )

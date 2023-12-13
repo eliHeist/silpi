@@ -1,14 +1,12 @@
 {% load static %}
 
 <footer class="w-full text-gray-700 bg-gray-100 body-font">
-    <div class="container px-5 py-24 mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+    <div class="container px-5 pt-24 mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-2 justify-center">
         <!-- logo -->
-        <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left mb-20 sm:col-span-2 xl:col-span-1">
+        <div class="flex-shrink-0 w-64 text-center md:mx-0 md:text-left mb-20 sm:col-span-2 xl:col-span-1">
             <a class="flex items-center justify-center font-medium text-gray-900 title-font md:justify-start">
-                <img class="h-16 object-cover"
-                    src="{% static 'images/logo.png' %}" alt="Store Logo">
+                <svg class="h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 629.33 152.36"><defs><style>.cls-1{fill:#00afaf;}</style></defs><title>COLORED SILPI</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,137.38l15.82-35.8c13.74,8.12,32.05,13.32,48.08,13.32,13.95,0,18.94-2.91,18.94-7.91,0-18.32-80.55-3.54-80.55-57.86C2.29,22.06,25,0,70.14,0c19.57,0,39.76,4.16,55,12.7L110.32,48.29C96,41,82.43,37.47,69.73,37.47c-14.36,0-18.94,4.16-18.94,9.16,0,17.48,80.55,2.91,80.55,56.62,0,26.64-22.69,49.12-67.86,49.12C39.13,152.36,14.57,146.33,0,137.38Z"/><path class="cls-1" d="M153.9,3.33H203V149H153.9Z"/><path class="cls-1" d="M224.95,3.33h49.12V110.94h65.77V149H224.95Z"/><path class="cls-1" d="M566.75,58.28c0,33.72-25.81,55-66.4,55h-21V149H430.21V3.33h70.15C540.94,3.33,566.75,24.56,566.75,58.28Zm-49.54,0c0-10.62-6.45-17.07-20-17.07h-17.9V75.35h17.9C510.76,75.35,517.22,68.9,517.22,58.28Z"/><path class="cls-1" d="M580.21,3.33h49.12V149H580.21Z"/></g></g></svg>
             </a>
-            <p class="mt-2 text-sm text-gray-500">Sowing Success, Steering Solutions</p>
             <div class="mt-4">
                 <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                     <a class="text-gray-500 cursor-pointer hover:text-gray-700">
@@ -52,6 +50,9 @@
                     <a href="{% url 'main:about' %}" class="text-gray-500 cursor-pointer hover:text-gray-900">Company</a>
                 </li>
                 <li class="mt-3">
+                    <a href="{% url 'posts:list' %}" class="text-gray-500 cursor-pointer hover:text-gray-900">Posts</a>
+                </li>
+                <li class="mt-3">
                     <a href="{% url 'main:terms-privacy' %}" class="text-gray-500 cursor-pointer hover:text-gray-900">Terms &amp; Privacy</a>
                 </li>
             </nav>
@@ -79,7 +80,7 @@
                     <a href="{% url 'contact:main-page' %}" class="text-gray-500 cursor-pointer hover:text-gray-900">Send a Message</a>
                 </li>
                 <li class="mt-3">
-                    <a class="text-gray-500 cursor-pointer hover:text-gray-900">contact@silpi.com</a>
+                    <a class="text-gray-500 cursor-pointer hover:text-gray-900">info@sil-pi.com</a>
                 </li>
                 <li class="mt-3">
                     <a href="tel:+256772601644" class="text-gray-500 cursor-pointer hover:text-gray-900">+256-772-601644</a>
@@ -87,9 +88,9 @@
             </nav>
         </div>
     </div>
-    <div class="bg-gray-300">
+    <div class="">
         <div class="container px-5 py-4 mx-auto">
-            <p class="text-sm text-gray-700 capitalize text-center">DakDot © 2020 All rights reserved </p>
+            <p class="text-sm text-gray-700 capitalize text-center">Powered by DakDot © 2023</p>
         </div>
     </div>
 </footer>

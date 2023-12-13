@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
+from posts.models import Post
 
 from products.models import Category
 
@@ -9,8 +10,10 @@ from products.models import Category
 class IndexView(View):
     def get(self, request):
         template_name = "main/index.html"
+        posts = Post.objects.all().order_by('date_modified')[:3]
         context = {
             'categories': Category.objects.all(),
+            'posts': posts,
         }
         return render(request, template_name, context)
 

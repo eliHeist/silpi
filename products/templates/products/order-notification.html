@@ -23,12 +23,10 @@
         </header>
         <div
             style="padding: 1rem;background-color:rgb(0, 54, 54);margin-top: .1rem;display: grid;row-gap: .5rem;text-align: center;color: rgb(200, 251, 251);">
-            <h2 style="font-weight: 800;font-size: 1.2rem;">New Vehicle Request Details:</h2>
+            <h2 style="font-weight: 800;font-size: 1.2rem;">Product Quotation Request Details:</h2>
             <div>
-                <p>Action: {{ order.action }}</p>
-                <p>Vehicle: {{ order.vehicle.make }}. {{ order.vehicle.model }}</p>
-                <p>Year: {{ order.vehicle.year }}</p>
-                <p>Details: {{ order.vehicle.more_details }}</p>
+                <p>Product: {{ order.product.name }}</p>
+                <p>Details: {{ order.product.details }}</p>
             </div>
             <div>
                 <p>Client Name: {{ order.name }}</p>
@@ -38,7 +36,7 @@
         </div>
         <footer style="padding: 1rem;">
             <p style="text-align: center;">
-                This email is intended to {{ order.email }}
+                This email is as a result of a quotation request on sil-pi.com
             </p>
         </footer>
     </main>

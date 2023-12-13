@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<main class="py-20">
+
+    <div class="container mx-auto px-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3">
+            {% for post in posts %}
+            <a href="{% url 'posts:detail' post.pk %}" class="">
+                <article class="p-2 outline outline-1 outline-primary-50 bg-grey-100 transition-all group hover:shadow-lg hover:rotate-3">
+                    <div class="group-hover:-rotate-3 transition-all">
+                        <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+                        <h2 class="font-medium text-primary-800 relative z-0 text-lg before:absolute before:top-0 before:right-6 before:aspect-square before:bg-transparent before:h-8 before:w-8 before:-z-10 before:-translate-y-4 before:rounded-sm before:outline before:outline-grey-50 before:outline-4 before:transition-all group-hover:before:rotate-45 group-hover:before:translate-y-6 group-hover:before:bg-primary-50">{{ post.title }}</h2>
+                        <p class="text-grey-700">{{ post.date_posted }}</p>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock content %}
