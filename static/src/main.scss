@@ -2,15 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-.container{
-    @apply px-4;
-}
 
 .head__{
     &2{
-        @apply text-4xl font-semibold text-primary-900 mb-6;
+        @apply text-5xl font-semibold text-primary-900 mb-6;
     }
     &3{
-        @apply text-2xl font-semibold text-primary-900 mb-2;
+        @apply text-3xl font-semibold text-primary-900 mb-2;
+    }
+}
+
+.business_loans{
+    @apply grid gap-8;
+    article{
+        @apply p-8 transition-all;
+        h3{
+            @apply text-primary-800 font-semibold text-3xl mb-4;
+        }
+        p{
+            @apply text-xl;
+        }
+
+        &:hover{
+            @apply bg-white/50;
+        }
     }
 }

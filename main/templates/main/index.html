@@ -4,77 +4,68 @@
 {% block content %}
 
 <!-- slider -->
-<section class="pb-20 pt-20">
-    <div class="container mx-auto">
+<section class="h-[100vh]">
         <!-- Slider main container -->
-        <div class="swiper">
+        <div class="swiper h-full">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper h-full">
                 <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-scale-down w-full aspect-video" src="{% static 'images/car.png' %}" alt="">
-
-                        <div class="mt-6 grid justify-center justify-items-center text-center">
-                            <h3 class="head__3">
-                                Discover a world of vehicles!
+                <div class="swiper-slide h-full relative">
+                    <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 lg:items-center h-full w-full absolute top-0 left-0 bottom-0 right-0">
+                        <img src="{% static 'images/vehicles.webp' %}" class="w-full h-full object-cover">
+                        <div class="mt-6 grid place-content-center place-items-center text-center">
+                            <h3 class="lg:text-6xl sm:text-5xl text-4xl font-medium">
+                                Discover a world of <span class="text-primary-500 font-bold">vehicles!</span>
                             </h3>
 
-                            <p class="my-4 px-8">
+                            <p class="my-4 md:my-6 lg:my-8 px-8 text-xl sm:text-2xl lg:text-3xl ">
                                 Whether you're looking to buy your dream car or simply need a reliable vehicle for rent,
                                 you've come to the right place.
                                 Buy or rent your perfect ride with us.
                             </p>
 
-                            <a href="#"
-                                class="inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-8 py-4 rounded-lg">
+                            <a href="{% url 'vehicles:list' %}" class="w-fit inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-6 py-2 rounded-sm text-lg group transition-all">
                                 Read more
-                                <i class="fas fa-arrow-right ml-3"></i>
+                                <i class="fas fa-arrow-right ml-3 transition-all group-hover:ml-6"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-cover w-full aspect-video" src="{% static 'images/consaltancy.webp' %}"
-                            alt="">
-
-                        <div class="mt-6 grid justify-center justify-items-center text-center">
-                            <h3 class="head__3">
-                                Expert Consultancy Services
+                <div class="swiper-slide h-full relative">
+                    <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 lg:items-center h-full w-full absolute top-0 left-0 bottom-0 right-0">
+                        <img src="{% static 'images/farm-tractor.webp' %}" class="w-full h-full object-cover">
+                        <div class="mt-6 grid place-content-center place-items-center text-center">
+                            <h3 class="lg:text-6xl sm:text-5xl text-4xl font-medium">
+                                Expert <span class="text-primary-500 font-bold">Consultancy</span> Services
                             </h3>
 
-                            <p class="my-4">
+                            <p class="my-4 md:my-6 lg:my-8 px-8 text-xl sm:text-2xl lg:text-3xl ">
                                 Unlock greater potential in your business with our expert consultancy services.
                             </p>
 
-                            <a href="#"
-                                class="inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-8 py-4 rounded-lg">
+                            <a href="{% url 'consultancy:consultancy' %}" class="w-fit inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-6 py-2 rounded-sm text-lg group transition-all">
                                 Read more
-                                <i class="fas fa-arrow-right ml-3"></i>
+                                <i class="fas fa-arrow-right ml-3 transition-all group-hover:ml-6"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="mt-8 grid lg:grid-cols-2 lg:items-center">
-                        <img class="object-cover w-full aspect-video" src="{% static 'images/farm-collage.webp' %}"
-                            alt="">
-
-                        <div class="mt-6 grid justify-center justify-items-center text-center">
-                            <h3 class="head__3">
-                                Farm Fresh Goodness
+                <div class="swiper-slide h-full relative">
+                    <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 lg:items-center h-full w-full absolute top-0 left-0 bottom-0 right-0">
+                        <img src="{% static 'images/farm-tractor.webp' %}" class="w-full h-full object-cover">
+                        <div class="mt-6 grid place-content-center place-items-center text-center">
+                            <h3 class="lg:text-6xl sm:text-5xl text-4xl font-medium">
+                                Farm <span class="text-primary-500 font-bold">Fresh</span> Goodness
                             </h3>
 
-                            <p class="my-4 px-8">
+                            <p class="my-4 md:my-6 lg:my-8 px-8 text-xl sm:text-2xl lg:text-3xl ">
                                 Explore a bountiful harvest of fruits, adorable animals, and animal products straight
                                 from the farm to your table.
                             </p>
 
-                            <a href="#"
-                                class="inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-8 py-4 rounded-lg">
-                                Read more
-                                <i class="fas fa-arrow-right ml-3"></i>
+                            <a href="{% url 'products:categories' %}" class="w-fit inline-block mt-2 text-white bg-primary-600 hover:bg-primary-500 px-6 py-2 rounded-sm text-lg group transition-all">
+                                Go here
+                                <i class="fas fa-arrow-right ml-3 transition-all group-hover:ml-6"></i>
                             </a>
                         </div>
                     </div>
@@ -82,26 +73,21 @@
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
-    </div>
 </section>
 
 <!-- who we are -->
-<section class="md:container md:mx-auto">
+<section class="md:container md:mx-auto mt-20">
     <div class="bg-primary-300 px-8 py-16 md:rounded-2xl md:text-center">
         <h2 class="head__2">Who are we?</h2>
-        <p class="md:text-lg max-w-2xl mx-auto mb-8">
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
             At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights
             to reliable vehicles and expert guidance, we're your one-stop destination for quality and excellence. Join
             us as we cultivate flavors, drive innovation, and nurture your aspirations.
         </p>
-        <a href="{% url 'main:about' %}" class="text-primary-800">
+        <a href="{% url 'main:about' %}" class="text-primary-900 group transition-all hover:text-primary-800">
             Find out more about us
-            <i class="fas fa-arrow-right ml-3"></i>
+            <i class="fas fa-arrow-right ml-3 transition-all group-hover:ml-6"></i>
         </a>
     </div>
 </section>
@@ -221,13 +207,13 @@
 </aside>
 {% endif %}
 
-<!-- delivery -->
+<!-- delivery
 <section class="bg-primary-300 py-20 px-4 text-center">
     <h2 class="head__2 text-center">Delivery</h2>
     <p class="text-lg max-w-2xl mx-auto">
         We offer free delivery on physical orders in the Central region and charge a variable fee for orders outside this area, ensuring fair and transparent pricing. Our commitment is to provide efficient and cost-effective delivery services for all customers, prioritizing your satisfaction.
     </p>
-</section>
+</section> -->
 
 <!-- get in touch -->
 <section class="py-20">
@@ -276,10 +262,10 @@
         loop: true, // Enable infinite loop
         slidesPerView: 1, // Number of slides to show at once
         spaceBetween: 20, // Space between slides
-        // pagination: {
-        //     el: '.swiper-pagination', // Pagination container
-        //     clickable: true, // Allow clicking on pagination bullets
-        // },
+        pagination: {
+            el: '.swiper-pagination', // Pagination container
+            clickable: true, // Allow clicking on pagination bullets
+        },
         navigation: {
             nextEl: '.swiper-button-next', // Next button
             prevEl: '.swiper-button-prev', // Previous button
