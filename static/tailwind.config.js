@@ -30,7 +30,7 @@ module.exports = {
                 }
             },
             fontFamily: {
-                body: ['Poppins', 'sans-serif']
+                body: ['Lato', 'sans-serif']
             },
         },
     },
