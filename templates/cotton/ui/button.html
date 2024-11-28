@@ -1,0 +1,32 @@
+
+<Button id="{{ id }}" class="
+{% if variant == 'white' %}bg-white hover:bg-white/70 text-dark
+{% elif variant == 'muted' %}bg-muted hover:bg-muted/70 text-white
+{% elif variant == 'dark' %}bg-dark hover:bg-dark/70 text-white
+{% elif variant == 'ghost' %}bg-transparent hover:bg-dark/10 text-dark
+{% elif variant == 'outline' %}bg-transparent outline outline-1 outline-primary hover:bg-dark/10 text-dark
+{% else %} bg-primary hover:bg-primary/70 text-white
+{% endif %}
+
+{% if size == 'sm' %} py-1 px-2 text-xs rounded-md gap-x-2
+{% elif size == 'md' %} py-2 px-4 text-sm rounded-lg gap-x-2
+{% elif size == 'icon' %} h-10 w-10 text-sm rounded-lg gap-x-2
+{% elif size == 'iconLg' %} h-11 w-11 text-sm rounded-lg gap-x-2
+{% elif size == 'iconXl' %} h-12 w-12 text-lg rounded-lg gap-x-2
+{% else %} py-3 px-6 text-sm rounded-xl gap-x-3
+{% endif %}
+
+grid grid-flow-col items-center content-center transition-all justify-center font-semibold
+
+{{ class }}
+" type="{% if not type %}button{% else %}{{ type }}{% endif %}" title="{{ title }}">
+    {% if icon %}
+    <i class="{{ icon }} text-base"></i>
+    {% endif %}
+    {% if text %}
+    <span>
+        {{ text }}
+    </span>
+    {% endif %}
+    {{ slot }}
+</Button>

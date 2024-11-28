@@ -5,27 +5,47 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-.head__{
-    &2{
-        @apply text-5xl font-semibold text-primary-900 mb-6;
+:root {
+    --clr-light: 0 0% 85%;
+    --clr-white: 0 0% 95%;
+    --clr-muted: 20 3% 56%;
+    --clr-primary: 206 97% 29%;
+    --clr-secondary: 236 43% 25%;
+    --clr-dark: 235 44% 11%;
+}
+
+@import './scss/infinite_scroller';
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.head__ {
+    &2 {
+        @apply text-5xl font-bold text-secondary mb-8;
     }
-    &3{
-        @apply text-3xl font-semibold text-primary-900 mb-2;
+
+    &3 {
+        @apply text-3xl font-bold text-secondary mb-2;
     }
 }
 
-.business_loans{
+.business_loans {
     @apply grid gap-8;
-    article{
+
+    article {
         @apply p-8 transition-all;
-        h3{
-            @apply text-primary-800 font-semibold text-3xl mb-4;
+
+        h3 {
+            @apply text-secondary font-semibold text-3xl mb-4;
         }
-        p{
+
+        p {
             @apply text-xl;
         }
 
-        &:hover{
+        &:hover {
             @apply bg-white/50;
         }
     }

@@ -6,97 +6,94 @@
     menu: false,
     services_menu: true
 }'>
-    <nav class="py-3 bg-white/90 backdrop-blur-md shadow-sm w-full fixed top-0 left-0 right-0 z-[9001]">
+    <nav class="nav py-3 w-full fixed top-0 left-0 right-0 z-[9001]">
 
-        <div class="container px-3 mx-auto flex justify-between">
+        <div class="container px-3 mx-auto flex justify-between items-center">
             <!-- Logo Container -->
             <div class="flex items-center">
                 <!-- Logo -->
-                <a class="cursor-pointer" href="/">
-                    <svg class="h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 629.33 152.36"><defs><style>.cls-1{fill:#00afaf;}</style></defs><title>COLORED SILPI</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,137.38l15.82-35.8c13.74,8.12,32.05,13.32,48.08,13.32,13.95,0,18.94-2.91,18.94-7.91,0-18.32-80.55-3.54-80.55-57.86C2.29,22.06,25,0,70.14,0c19.57,0,39.76,4.16,55,12.7L110.32,48.29C96,41,82.43,37.47,69.73,37.47c-14.36,0-18.94,4.16-18.94,9.16,0,17.48,80.55,2.91,80.55,56.62,0,26.64-22.69,49.12-67.86,49.12C39.13,152.36,14.57,146.33,0,137.38Z"/><path class="cls-1" d="M153.9,3.33H203V149H153.9Z"/><path class="cls-1" d="M224.95,3.33h49.12V110.94h65.77V149H224.95Z"/><path class="cls-1" d="M566.75,58.28c0,33.72-25.81,55-66.4,55h-21V149H430.21V3.33h70.15C540.94,3.33,566.75,24.56,566.75,58.28Zm-49.54,0c0-10.62-6.45-17.07-20-17.07h-17.9V75.35h17.9C510.76,75.35,517.22,68.9,517.22,58.28Z"/><path class="cls-1" d="M580.21,3.33h49.12V149H580.21Z"/></g></g></svg>
+                <a class="bg-white py-4 px-2 rounded-lg shadow-sm" href="/">
+                    <img src="{% static 'images/logo-trans.png' %}" alt="" class="w-20 sm:w-28">
                 </a>
             </div>
 
             <!-- Links Section -->
-            <div class="items-center hidden space-x-8 md:flex">
-                <a href="/" class="flex text-primary-900 hover:text-primary-500
+            <div class="items-center hidden space-x-8 md:flex bg-white px-6 py-2 rounded-full shadow-sm">
+                <a href="/" class="flex hover:text-primary-500
                     cursor-pointer transition-colors duration-300">
                     Home
                 </a>
 
                 <div
-                    class="flex text-primary-900            cursor-pointer transition-colors duration-300 relative items-center gap-3 group min-w-fit">
+                    class="flex cursor-pointer transition-colors duration-300 relative items-center gap-3 group min-w-fit">
                     Services <i class="fas fa-angle-down"></i>
                     <div
-                        class="absolute top-0 -left-60 opacity-0 pointer-events-none group-hover:top-full group-hover:opacity-100 group-hover:pointer-events-auto p-6 outline outline-1 rounded-sm bg-white grid grid-cols-2 gap-3 min-w-[30rem]">
-                        <div class="grid gap-2">
-                            <h3 class="font-bold">Consultancy</h3>
-                            <a href="{% url 'consultancy:consultancy' %}"
-                                class="flex text-primary-900 cursor-pointer transition-colors duration-300 hover:text-primary-600">
-                                Consultancy
-                            </a>
-                            <a href="{% url 'consultancy:portfolio' %}"
-                                class="flex text-primary-900 cursor-pointer transition-colors duration-300 hover:text-primary-600">
-                                Portfolio
-                            </a>
-                        </div>
+                        class="dropdown absolute top-8 -left-[11rem] pointer-events-auto p-6 rounded-xl bg-white min-w-[30rem]">
+                        <div class="grid grid-cols-2 gap-y-4 text-primary-800">
+                            <div class="grid gap-y-3 content-start">
+                                <h3 class="font-bold text-sm text-grey-400">Services</h3>
+                                <hr>
+                                <!-- <a href="{% url 'consultancy:portfolio' %}"
+                                    class="flex cursor-pointer transition-colors duration-300 hover:text-primary-600">
+                                    View Portfolio
+                                </a> -->
+                                <a href="{% url 'consultancy:consultancy' %}"
+                                    class="flex cursor-pointer transition-colors duration-300 hover:text-primary-600">
+                                    Consultancy
+                                </a>
+                                <a href="{% url 'main:micro-loans' %}" class="flex 
+                                cursor-pointer transition-colors duration-300
+                            hover:text-primary-600">
+                                    Micro Lending
+                                </a>
+                            </div>
 
-                        <div class="grid gap-2">
-                            <h3 class="font-bold">Vehicles</h3>
-                            <a href="{% url 'vehicles:list' %}" class="flex text-primary-900 
-                            cursor-pointer transition-colors duration-300
-                        hover:text-primary-600">
-                                Vehicle sale and hire
-                            </a>
-                        </div>
-
-                        <div class="grid gap-2">
-                            <h3 class="font-bold">Micro Lending</h3>
-                            <a href="{% url 'main:micro-loans' %}" class="flex text-primary-900 
-                            cursor-pointer transition-colors duration-300
-                        hover:text-primary-600">
-                                Micro Lending
-                            </a>
-                        </div>
-
-                        <div class="grid gap-2">
-                            <h3 class="font-bold">Farming</h3>
-                            <a href="{% url 'products:categories' %}" class="flex text-primary-900 
-                            cursor-pointer transition-colors duration-300
-                        hover:text-primary-600">
-                                Farm products
-                            </a>
-                            <!-- <a href="{% url 'cart:checkout' %}" class="flex text-primary-900 
-                            cursor-pointer transition-colors duration-300
-                        hover:text-primary-600">
-                                Cart
-                            </a> -->
+                            <div class="grid gap-y-3 content-start">
+                                <h3 class="font-bold text-sm text-grey-400">Products</h3>
+                                <hr>
+                                <a href="{% url 'main:paint' %}" class="flex 
+                                cursor-pointer transition-colors duration-300
+                            hover:text-primary-600">
+                                    Paint
+                                </a>
+                                <a href="{% url 'vehicles:list' %}" class="flex 
+                                cursor-pointer transition-colors duration-300
+                            hover:text-primary-600">
+                                    Get a car
+                                </a>
+                                <a href="{% url 'products:categories' %}" class="flex 
+                                cursor-pointer transition-colors duration-300
+                            hover:text-primary-600">
+                                    Shop Farm Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="{% url 'main:about' %}" class="flex text-primary-900 hover:text-primary-500
+                <a href="{% url 'main:about' %}" class="flex hover:text-primary-500
                     cursor-pointer transition-colors duration-300">
                     About Us
                 </a>
 
-                <a href="{% url 'contact:main-page' %}" class="flex text-primary-900 hover:text-primary-500
-                    cursor-pointer transition-colors duration-300">
-                    Contact Us
-                </a>
             </div>
 
+            <a href="{% url 'contact:main-page' %}" class="hidden sm:flex shadow-sm">
+                <c-ui.button text="Contact Us" icon="fas fa-phone" variant="white" />
+            </a>
+
             <!-- Icon Menu Section -->
-            <div class="flex items-center space-x-5 md:hidden">
-                <button type="button" @click="menu = !menu">
-                    <i class="fas scale-125" :class="menu ? 'fa-close' : 'fa-bars'"></i>
-                </button>
+            <div class="md:hidden">
+                <c-ui.button variant="white" size="iconXl" title="Nav toggle">
+                    <i class="fas text-lg" :class="menu ? 'fa-close' : 'fa-bars'"></i>
+                </c-ui.button>
             </div>
         </div>
 
     </nav>
 
-    <menu x-cloak x-show="menu" x-transition class="fixed top-0 left-0 bottom-0 right-0 bg-white lg:hidden overflow-y-auto z-[9000]">
+    <menu x-cloak x-show="menu" x-transition
+        class="fixed top-0 left-0 bottom-0 right-0 bg-white lg:hidden overflow-y-auto z-[9000]">
         <div class="grid gap-6 content-start pt-20 pb-6 px-4 text-primary-800">
             <a href="/" class="">
                 Home
@@ -107,7 +104,9 @@
             </a>
 
             <div class=" grid gap-4 rounded-lg">
-                <button @click="services_menu = !services_menu" class="text-primary-800 text-left flex gap-8 items-center">Services <i class="fas" :class="services_menu ? 'fa-angle-up' : 'fa-angle-down'"></i></button>
+                <button @click="services_menu = !services_menu"
+                    class="text-primary-800 text-left flex gap-8 items-center">Services <i class="fas"
+                        :class="services_menu ? 'fa-angle-up' : 'fa-angle-down'"></i></button>
                 <div class="grid gap-4 pl-4 border-l" x-cloak x-transition x-show="services_menu">
                     <!-- consultancy -->
                     <div class="grid gap-2">
@@ -157,3 +156,22 @@
         </div>
     </menu>
 </div>
+
+<style>
+    nav.nav {
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav.nav.hide {
+        top: -200px;
+    }
+
+    nav.nav .group .dropdown {
+        clip-path: circle(0% at 50% 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    nav.nav .group:hover .dropdown {
+        clip-path: circle(70.7% at 50% 50%);
+    }
+</style>

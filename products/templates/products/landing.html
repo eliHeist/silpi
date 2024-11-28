@@ -2,11 +2,23 @@
 
 
 {% block content %}
+<section class="banner relative min-h-[100dvh] bg-cover bg-no-repeat bg-center"
+    style="background-image: url('{% static 'images/vegies.webp' %}');">
+    <div class="absolute inset-0 grid items-center bg-gradient-to-br from-secondary/10 via-dark/80 to-secondary/40">
+        <div class="container mx-auto text-center grid justify-center px-3">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white">Farm <br>Products</h1>
+            <p class="text-xl text-light mb-8 max-w-2xl mx-auto">We offer a wide range of high-quality agricultural products, including fresh fruits, vegetables, pork, beef, and honey. Trust us for the best in farm-fresh produce and meats. Experience nature's bounty with our extensive selection.</p>
+            <a href="#categories" class="mx-auto">
+                <c-ui.button variant="white" text="Browse Products" icon="fas fa-arrow-down"/>
+            </a>
+        </div>
+    </div>
+</section>
 <!-- categories -->
-<section class="py-20">
+<section class="py-20" id="categories">
     <div class="container mx-auto">
-        <h2 class="head__2">Cartegories</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 class="head__2">Select a category</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {% for category in categories %}
             <a href="{% url 'products:products-by-category' category.pk %}">
                 <article class="p-4 outline outline-1 transition-all group hover:shadow-lg hover:-rotate-3">

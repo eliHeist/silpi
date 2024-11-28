@@ -3,8 +3,9 @@
 
 {% block content %}
 <!-- products -->
-<div class="products pb-20 pt-40">
+<div class="products py-20 mt-40">
     <div class="container mx-auto">
+        {% if product.count > 0 %}
         <div class="grid lg:grid-cols-3 gap-4">
             {% for product in products %}
             <a href="{% url 'products:product-detail' product.pk %}">
@@ -19,6 +20,16 @@
             </a>
             {% endfor %}
         </div>
+        {% else %}
+        <div class="p-16 grid place-content-center gap-y-8">
+            <p class="text-2xl md:text-5xl text-center">
+                No products found!
+            </p>
+            <a href="{% url 'products:categories' %}" class="mx-auto w-fit">
+                <c-ui.button text="Browse other categories" icon="fas fa-arrow-left"/>
+            </a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

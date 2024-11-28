@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% load static %}
+
+
+{% block content %}
+
+<section class="banner relative min-h-[100dvh] bg-cover bg-no-repeat bg-center"
+    style="background-image: url('{% static 'images/builder-s-hand-is-holding-paint-roller.jpg' %}');">
+    <div class="absolute inset-0 grid items-center">
+        <div class="container mx-auto px-3">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white">Tropical <br>Paint</h1>
+            <p class="text-xl text-light">by SIL and Partners Initiative</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <h2 class="head__2 text-center">Product Range</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
+        {% for product in products %}
+        <div class="card {{ product.bg_class }} p-8 rounded-lg aspect-square grid place-content-center">
+            <h3 class="text-xl font-bold mb-2">{{ product.name }}</h3>
+            <p class="text-base">{{ product.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="py-20">
+    <h2 class="head__2 text-center">Colors</h2>
+    <p class="text-center text-lg mb-8">We offer a wide range of colors to choose from.</p>
+    <c-ui.InfiniteScroller>
+        {% for color in colors %}
+        <div class="card rounded-lg aspect-square grid place-content-center text-center w-32" style="background-color: {{ color.hex }};color:{{ color.foreground_color }};" title="{{ color.mood }}">
+            <h3 class="text-sm font-bold ">{{ color.name }}</h3>
+        </div>
+        {% endfor %}
+    </c-ui.InfiniteScroller>
+</section>
+
+<section class="py-20 bg-white">
+    <h2 class="head__2 text-center">Packaging Options</h2>
+    <div class="grid sm:grid-cols-2 gap-8 container mx-auto mt-8">
+        <div class="grid md:flex gap-1 place-content-center place-items-center">
+            <img src="{% static 'images/4l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96">
+            <div>
+                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4">4 Litre Jerricans <br>and Buckets</h3>
+                <p>Convenient for smaller projects.</p>
+            </div>
+        </div>
+        <div class="grid md:flex gap-1 place-content-center place-items-center">
+            <img src="{% static 'images/20l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96">
+            <div>
+                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4">20 Litre Jerricans <br>and Buckets</h3>
+                <p>Ideal for larger applications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary py-20">
+    <div class="container mx-auto text-center text-white grid justify-center">
+        <h2 class="text-5xl font-bold">Ready to Get Started?</h2>
+        <div class="text-lg mt-2 text-light">
+            The factory is located in <address>Wakiso, Bakasa.</address>The paint is distributed to major hardware store across the country. 
+        </div>
+        <p class="text-lg mt-2 text-light">Contact us today to discuss your paint solutions.</p>
+        <a href="{% url 'contact:main-page' %}" class="mt-6 mx-auto">
+            <c-ui.button variant="white" text="Contact Us" icon="fas fa-phone" />
+        </a>
+    </div>
+</section>
+
+
+
+{% endblock content %}

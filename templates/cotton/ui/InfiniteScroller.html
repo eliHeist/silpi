@@ -1,0 +1,5 @@
+<div class="scroller" data-direction="{% if direction %}{{ direction }}{% else %}left{% endif %}" data-speed="{% if speed %}{{ speed }}{% else %}slow{% endif %}">
+    <ul class="tag-list scroller__inner">
+        {{ slot }}
+    </ul>
+</div>

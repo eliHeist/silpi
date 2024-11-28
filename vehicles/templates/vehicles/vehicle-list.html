@@ -5,14 +5,21 @@
 
 
 {% block content %}
-<header class="bg-primary-400 pb-20 pt-40">
-    <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-semibold text-white">Vehicles</h1>
-        <p class="text-lg text-gray-200">Vehicles for both hire and sale.</p>
-    </div>
-</header>
 
-<section class="py-20">
+<section class="banner relative min-h-[100dvh] bg-cover bg-no-repeat bg-center"
+    style="background-image: url('{% static 'images/stylish-black-woman-car-handoff.webp' %}');">
+    <div class="absolute inset-0 grid items-center bg-gradient-to-br from-secondary/10 to-dark">
+        <div class="container mx-auto text-right grid justify-end content-end items-end px-3">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white">Vehicle <br>Solutions</h1>
+            <p class="text-xl text-light mb-8">we offer vehicles for sale and hire.</p>
+            <a href="#vehicles" class="ml-auto">
+                <c-ui.button variant="white" text="Browse Vehicles" icon="fas fa-arrow-down"/>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 mt-10" id="vehicles">
     <div class="container mx-auto">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {% for vehicle in vehicles %}

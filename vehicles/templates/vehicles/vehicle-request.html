@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<section class="pb-20 pt-20">
+<section class="py-20 sm:mt-20 md:mt-40">
     <div class="container mx-auto">
         <div class="grid gap-8">
             <div class="grid md:grid-cols-2 gap-4">
@@ -57,10 +57,7 @@
                             {% endif %}
                         </select>
                     </div>
-                    <button type="submit" class="px-6 py-2 bg-primary-500 w-fit text-white font-semibold">
-                        Request a Quote
-                        <i class="fas fa-arrow-right-long ml-3"></i>
-                    </button>
+                    <c-ui.button variant="white" text="Request a Quote" icon="fas fa-arrow-right-long" type="submit" />
                 </form>
             </div>
         </div>
