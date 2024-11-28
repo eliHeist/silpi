@@ -46,7 +46,7 @@
 
 <!-- who we are -->
 <section class="py-20 bg-gradient-to-b from-transparent to-white/50">
-    <div class="bg-primary-300 px-8 py-16 md:rounded-2xl md:text-center container mx-auto">
+    <div class="bg-primary-300 px-8 py-16 md:rounded-2xl md:text-center container mx-auto slide-in-top slide-in-trigger">
         <h2 class="head__2">Who are we?</h2>
         <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
             At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights
@@ -65,10 +65,10 @@
     <div class="container mx-auto">
         <div class="grid grid-flow-col gap-8 overflow-x-auto pb-8">
             {% for service in services %}
-            <div class="max-w-sm grid grid-rows-[auto_1fr] mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="max-w-sm grid grid-rows-[auto_1fr] mx-auto bg-white shadow-xl rounded-lg overflow-hidden slide-in-left slide-in-trigger">
                 <div class="flex items-center justify-between">
                     <div>
-                        <img src="{{ service.image }}" alt="">
+                        <img src="{{ service.image }}" alt="" class="blur-img">
                     </div>
                 </div>
                 <div class="p-10 pt-8 grid [grid-template-rows:_auto_auto_1fr]">
@@ -121,8 +121,8 @@
         <h2 class="head__2 text-center">Updates</h2>
         <main class="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-6">
             {% for post in posts %}
-            <article>
-                <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}" class="object-cover aspect-video">
+            <article class="slide-in-left slide-in-trigger">
+                <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}" class="object-cover aspect-video blur-img">
                 <a href="{% url 'posts:detail' post.pk %}"
                     class="text-primary-900 hover:text-primary-700 transition-all">
                     <h3

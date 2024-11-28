@@ -17,7 +17,7 @@
     <h2 class="head__2 text-center">Product Range</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
         {% for product in products %}
-        <div class="card {{ product.bg_class }} p-8 rounded-lg aspect-square grid place-content-center">
+        <div class="card {{ product.bg_class }} p-8 rounded-lg aspect-square grid place-content-center slide-in-left">
             <h3 class="text-xl font-bold mb-2">{{ product.name }}</h3>
             <p class="text-base">{{ product.description }}</p>
         </div>
@@ -41,24 +41,24 @@
     <h2 class="head__2 text-center">Packaging Options</h2>
     <div class="grid sm:grid-cols-2 gap-8 container mx-auto mt-8">
         <div class="grid md:flex gap-1 place-content-center place-items-center">
-            <img src="{% static 'images/4l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96">
+            <img src="{% static 'images/4l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96 blur-img">
             <div>
-                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4">4 Litre Jerricans <br>and Buckets</h3>
-                <p>Convenient for smaller projects.</p>
+                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4 slide-in-left">4 Litre Jerricans <br>and Buckets</h3>
+                <p class="slide-in-left">Convenient for smaller projects.</p>
             </div>
         </div>
         <div class="grid md:flex gap-1 place-content-center place-items-center">
-            <img src="{% static 'images/20l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96">
+            <img src="{% static 'images/20l-jerrycan.webp' %}" alt="" class="object-contain max-h-72 sm:max-h-96 blur-img">
             <div>
-                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4">20 Litre Jerricans <br>and Buckets</h3>
-                <p>Ideal for larger applications.</p>
+                <h3 class="text-secondary text-xl md:text-4xl font-bold mb-4 slide-in-left">20 Litre Jerricans <br>and Buckets</h3>
+                <p class="slide-in-left">Ideal for larger applications.</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="bg-secondary py-20">
-    <div class="container mx-auto text-center text-white grid justify-center">
+    <div class="container mx-auto text-center text-white grid justify-center blur-img">
         <h2 class="text-5xl font-bold">Ready to Get Started?</h2>
         <div class="text-lg mt-2 text-light">
             The factory is located in <address>Wakiso, Bakasa.</address>The paint is distributed to major hardware store across the country. 
