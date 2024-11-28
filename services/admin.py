@@ -1,5 +1,8 @@
 from services.models import Service
 from django.contrib import admin
+from unfold.admin import ModelAdmin
 
 # Register your models here.
-admin.site.register(Service)
+@admin.register(Service)
+class ServiceAdminClass(ModelAdmin):
+    pass

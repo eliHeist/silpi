@@ -6,9 +6,9 @@ from accounts.forms import SignupForm
 User = get_user_model()
 
 # Auth and accounts
-class SignupView(CreateView):
-    template_name = 'registration/signup.html'
-    form_class = SignupForm
+# class SignupView(CreateView):
+#     template_name = 'registration/signup.html'
+#     form_class = SignupForm
 
-    def get_success_url(self):
-        return reverse('accounts:login')
+#     def get_success_url(self):
+#         return reverse('accounts:login')
