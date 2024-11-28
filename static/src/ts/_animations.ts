@@ -25,16 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             filter: 'blur(5px)', 
             scale: 0.8,
-            transform: 'translateY(200px)'
+            transform: 'translateY(200px)',
+            opacity: 0
         },
         {
             filter: 'blur(0px)',
             scale: 1,
             transform: 'translateY(0%)',
+            opacity: 1,
             scrollTrigger: {
                 trigger: '.slide-in-top',
-                start: 'top 80%',
-                end: 'top 50%',
+                start: 'top 90%',
+                end: 'top 40%',
                 scrub: true,
                 toggleActions: 'play play reverse reverse',
             },
@@ -46,16 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { 
             filter: 'blur(5px)', 
             scale: 0.8,
-            transform: 'translateX(100%)'
+            transform: 'translateX(100%)',
+            opacity: 0
         },
         {
             filter: 'blur(0px)',
             scale: 1,
             transform: 'translateX(0%)',
+            opacity: 1,
             scrollTrigger: {
                 trigger: '.slide-in-left',
-                start: 'top 80%',
-                end: 'top 50%',
+                start: 'top 90%',
+                end: 'top 30%',
                 scrub: true,
                 toggleActions: 'play play reverse reverse',
             },

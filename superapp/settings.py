@@ -190,7 +190,7 @@ if not DEBUG:
 
 # auth config
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'accounts:login'
+LOGOUT_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'accounts.User'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
