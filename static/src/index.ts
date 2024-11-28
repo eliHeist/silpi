@@ -1,5 +1,6 @@
 import './main.scss';
 import { carouselInit, CarouselSlider } from "./animations/carousel";
+import './ts/_lenis';
 import './ts/_infiniteScroler';
 
 declare const homepage:boolean
