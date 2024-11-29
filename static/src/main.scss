@@ -51,3 +51,17 @@ html {
         }
     }
 }
+
+.section {
+    padding-top: 4rem /* 40px */;
+    padding-bottom: 4rem /* 40px */;
+
+    @media (min-width: 768px) {
+        padding-top: 5rem /* 80px */;
+        padding-bottom: 5rem /* 80px */;
+    }
+}
+
+.container {
+    @apply px-6 mx-auto;
+}
