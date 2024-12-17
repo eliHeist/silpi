@@ -5,7 +5,7 @@
 <!-- products -->
 <div class="products py-20 mt-40">
     <div class="container mx-auto">
-        {% if product.count > 0 %}
+        {% if products.count > 0 %}
         <div class="grid lg:grid-cols-3 gap-4">
             {% for product in products %}
             <a href="{% url 'products:product-detail' product.pk %}">

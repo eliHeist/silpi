@@ -8,6 +8,11 @@ module.exports = {
                 muted: "hsl(var(--clr-muted) / <alpha-value>)",
                 primary: "hsl(var(--clr-primary) / <alpha-value>)",
                 secondary: "hsl(var(--clr-secondary) / <alpha-value>)",
+                accent: "hsl(var(--clr-accent) / <alpha-value>)",
+                fruits: "hsl(var(--clr-fruits) / <alpha-value>)",
+                honey: "hsl(var(--clr-honey) / <alpha-value>)",
+                meat: "hsl(var(--clr-meat) / <alpha-value>)",
+                meat_light: "hsl(var(--clr-meat-light) / <alpha-value>)",
                 dark: "hsl(var(--clr-dark) / <alpha-value>)",
                 grey: {
                     50: 'rgb(252, 252, 252)',
@@ -23,12 +28,14 @@ module.exports = {
                 }
             },
             fontFamily: {
-                body: ['Lato', 'sans-serif']
+                body: ['Montserrat', 'serif']
             },
         },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/container-queries'),
+    ],
 };

@@ -20,8 +20,10 @@
                     <div class="h-20"></div>
                     <div class="container px-4 mx-auto text-white h-full place-content-center">
                         <div class="my-auto grid gap-y-6">
-                            <h2 class="sm:text-6xl text-4xl font-black uppercase text-primay-500">{{ item.title|safe }}</h2>
-                            <p class="bg-gradient-to-r from-white/10 to-dark/60 w-fit md:max-w-[50%] text-lg px-4 py-2">{{ item.description|safe }}</p>
+                            <h2 class="sm:text-6xl text-4xl font-black uppercase text-primay-500">{{ item.title|safe }}
+                            </h2>
+                            <p class="bg-gradient-to-r from-white/10 to-dark/60 w-fit md:max-w-[50%] text-lg px-4 py-2">
+                                {{ item.description|safe }}</p>
                             <div>
                                 <a href="{{ item.url }}">
                                     <c-ui.button text="View more" icon="fas fa-arrow-right"></c-ui.button>
@@ -39,18 +41,19 @@
 
 <section class="section">
     <c-ui.InfiniteScroller speed="fast">
-        <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">SIL</p>
         <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Tropical Paint</p>
         <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Consultancy</p>
         <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Automobiles</p>
         <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Agriculture</p>
-        <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Business growth</p>
+        <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Micro Loans</p>
+        <p class="font-black text-3xl lg:text-5xl text-muted uppercase px-8">Tours and Travel</p>
     </c-ui.InfiniteScroller>
 </section>
 
 <!-- who we are -->
 <section class="section bg-gradient-to-b from-transparent to-white/50">
-    <div class="bg-primary-300 px-8 py-16 md:rounded-2xl md:text-center container mx-auto slide-in-top slide-in-trigger">
+    <div
+        class="bg-primary-300 px-8 py-16 md:rounded-2xl md:text-center container mx-auto slide-in-top slide-in-trigger">
         <h2 class="head__2">Who are we?</h2>
         <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
             At Sil-Pi, we're passionate experts in agriculture, automobiles, and consultancy. From farm-fresh delights
@@ -64,12 +67,186 @@
 </section>
 
 <!-- services -->
-<div class="section px-4 mx-auto grid bg-gradient-to-b from-white/50 to-white/90">
+<div class="services @container/sv1">
+    <!-- microloans -->
+    <section class="bg-white pt-24 grid items-center @5xl/sv1:grid-cols-2 @6xl/sv1:grid-cols-5">
+        <div class="grid px-4 @xl/sv1:justify-center @6xl/sv1:col-span-2">
+            <h3 class="text-4xl font-bold">Need Cash Fast?</h3>
+            <p class="mt-8 mb-4 text-lg">Unlock your financial Freedom with our <br>Hustle free Loans.</p>
+            <h4 class="font-semibold text-xl mb-4">Be assured of:</h4>
+            <ul class="grid gap-y-2">
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-primary"></i>
+                    <span>Quick approval process</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-primary"></i>
+                    <span>Competitive interest rates</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-primary"></i>
+                    <span>Transparent terms and conditions</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-primary"></i>
+                    <span>Customer satisfaction guaranteed</span>
+                </li>
+            </ul>
+        </div>
+        <figure class="@6xl/sv1:col-span-3">
+            <img src="{% static 'images/shillings-paper-notes.webp' %}" alt="uganda shillings" class="w-full">
+        </figure>
+    </section>
+    <!-- tropical paint -->
+    <section class="bg-primary pt-24 grid items-center @5xl/sv1:grid-cols-5">
+        <div class="grid px-4 text-white @xl/sv1:justify-center @5xl/sv1:order-2 @5xl/sv1:col-span-3">
+            <h3 class="text-4xl font-bold">
+                Upgrade your <br><span class="text-accent">Home’s Look</span>
+            </h3>
+            <p class="mt-8 mb-4 text-lg">Let us make your dream colorful</p>
+            <h4 class="font-semibold text-xl mb-4">Our Packaging</h4>
+            <ul class="grid gap-y-2">
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-accent"></i>
+                    <span>Matt emulsion</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-accent"></i>
+                    <span>Weather Shield</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-accent"></i>
+                    <span>Vinyl Silk</span>
+                </li>
+                <li class="flex items-center gap-x-4">
+                    <i class="fas fa-circle-check text-accent"></i>
+                    <span>Wood preservatives</span>
+                </li>
+            </ul>
+        </div>
+        <figure class=" @5xl/sv1:col-span-2">
+            <img src="{% static 'images/paint-splash.webp' %}" alt="Tropical Paint" class="w-full">
+        </figure>
+    </section>
+    <!-- bento -->
+    <section class="bento section bg-white @container/bento">
+        <div class="grid gap-6 container @4xl/bento:grid-cols-2 @6xl/bento:grid-cols-3 @6xl/bento:grid-rows-3">
+            <!-- honey -->
+            <div class="rounded-[1.25rem] overflow-hidden bg-honey grid grid-rows-2 @3xl/bento:grid-rows-1 @3xl/bento:grid-cols-2 @4xl/bento:order-1 @4xl/bento:col-span-2">
+                <div class="relative">
+                    <img src="{% static 'images/honey/honey-comb.webp' %}" alt=""
+                        class="absolute top-0 left-0 bottom-0">
+                    <img src="{% static 'images/honey/honey-stick-plus-bowls.webp' %}" alt=""
+                        class="absolute top-[3rem] -left-1">
+                    <img src="{% static 'images/honey/spilling-honey.webp' %}" alt="" class="absolute -top-1 right-4">
+                </div>
+                <div class="grid p-6 text-white @lg/bento:p-12">
+                    <h3 class="text-5xl font-black uppercase">NATURAL BEE HONEY</h3>
+                    <p class="mt-8 mb-4 text-lg">We offer honey right from 25,000 /=
+                        for a liter</p>
+                    <h4 class="font-semibold text-xl mb-4">Our Guarantee</h4>
+                    <ul class="grid gap-y-2">
+                        <li class="flex items-center gap-x-4">
+                            <i class="fas fa-circle-check text-accent"></i>
+                            <span>100% Pure Honey</span>
+                        </li>
+                        <li class="flex items-center gap-x-4">
+                            <i class="fas fa-circle-check text-accent"></i>
+                            <span>Fresh from the Hive</span>
+                        </li>
+                        <li class="flex items-center gap-x-4">
+                            <i class="fas fa-circle-check text-accent"></i>
+                            <span>High value for money</span>
+                        </li>
+                        <li class="flex items-center gap-x-4">
+                            <i class="fas fa-circle-check text-accent"></i>
+                            <span>Rich taste</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- meat -->
+            <div class="rounded-[1.25rem] overflow-hidden relative @4xl/bento:order-3 @6xl/bento:order-2 @6xl/bento:row-span-2">
+                <div class="absolute inset-0 grid grid-rows-2 z-0">
+                    <div class="bg-gradient-to-b from-meat_light to-[#DECABA]"></div>
+                    <div class="bg-gradient-to-b from-[#CA423F] to-meat"></div>
+                </div>
+                <div class="z-[2] relative pt-40 pb-32 text-meat_light text-center @6xl/bento:pt-60">
+                    <img src="{% static 'images/meat/meat-steak.webp' %}" alt="" class="w-full">
+                    <h3 class="text-5xl font-black uppercase">FRESH <br>MEAT</h3>
+                    <p class="mt-8 mx-auto max-w-[70%] text-lg">Top-quality, fresh meat available for sale. Order now
+                        for the best cuts delivered to your door!</p>
+                </div>
+            </div>
+            <!-- farm -->
+            <div class="rounded-[1.25rem] overflow-hidden aspect-square bg-primary text-white grid place-content-center text-center @4xl/bento:aspect-video @4xl/bento:order-2 @4xl/bento:col-span-2 @6xl/bento:order-4 @6xl/bento:col-span-1 @6xl/bento:aspect-auto">
+                <h3 class="text-5xl font-black uppercase">SIL <br>FARM</h3>
+            </div>
+            <!-- fresh fruits -->
+            <div class="rounded-[1.25rem] overflow-hidden relative bg-fruits @4xl/bento:order-3 @6xl/bento:order-3 @6xl/bento:row-span-2">
+                <div class="py-20 text-white text-center">
+                    <img src="{% static 'images/fruits/Fresh.svg' %}" alt="" class="mx-auto">
+                    <h3 class="text-5xl font-black uppercase text-accent">FRUITS</h3>
+                    <img src="{% static 'images/fruits/fruits-batch.webp' %}" alt="" class="mt-11 mx-auto">
+                    <p class="mt-2 mb-7 mx-auto max-w-[90%] text-lg">Taste the bounty of the farm! Our selection of farm
+                        fresh fruits is available for sale, packed with natural sweetness and vibrant flavors. Order now
+                        and enjoy the freshest harvest delivered right to your door!</p>
+                    <div class="grid justify-center">
+                        <a href="#">
+                            <c-ui.button text="Get Started" variant="white" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- piggery -->
+            <div class="rounded-[1.25rem] overflow-hidden relative bg-gradient-to-br from-[#167024] to-[#418245] @4xl/bento:order-5 @4xl/bento:col-span-2">
+                <div class="py-20 text-white px-6 @lg/bento:px-10 grid @3xl/bento:grid-cols-2 @3xl/bento:gap-x-10 items-center @4xl/bento:py-12">
+                    <div>
+                        <h3 class="text-5xl font-black uppercase">PIGS FOR SALE</h3>
+                        <p class="mt-6 mb-8 mx-auto text-lg @3xl/bento:mb-0">
+                            Discover top-quality pig breeds available for sale, featuring the versatile and adaptable <span class="text-accent font-bold">Large White</span>, the prolific <span class="text-accent font-bold">Camborough</span> with exceptional reproductive performance, and the superior meat quality of the <span class="text-accent font-bold">Duroc</span>. <br>Get started now and grab yourself a Pig from our farm.
+                        </p>
+                    </div>
+                    <div class="@container/pig">
+                        <ul class="grid gap-y-4 @sm/pig:grid-cols-2">
+                            <li class="flex gap-x-4">
+                                <i class="fas fa-circle-check text-accent mt-1"></i>
+                                <div class="grid">
+                                    <h4 class="font-bold">2-3 Months</h4>
+                                    <p>Shs. 250,000</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-x-4">
+                                <i class="fas fa-circle-check text-accent mt-1"></i>
+                                <div class="grid">
+                                    <h4 class="font-bold">4-5 Months</h4>
+                                    <p>Shs. 450,000</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-x-4">
+                                <i class="fas fa-circle-check text-accent mt-1"></i>
+                                <div class="grid">
+                                    <h4 class="font-bold">Pregnant Shows</h4>
+                                    <p>Shs. 800,000</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- services -->
+<div class="section px-4 mx-auto grid bg-gradient-to-b from-white/50 to-white/90 hidden">
     <h2 class="hidden">Services</h2>
     <div class="container mx-auto overflow-x-auto">
         <div class="grid grid-flow-col gap-8 pb-8 w-max">
             {% for service in services %}
-            <div class="max-w-xs sm:max-w-sm min-w-[15rem] grid grid-rows-[auto_1fr] mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+            <div
+                class="max-w-xs sm:max-w-sm min-w-[15rem] grid grid-rows-[auto_1fr] mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
                 <div class="flex items-center justify-between">
                     <div>
                         <img src="{{ service.image }}" alt="" class=" slide-in-top slide-in-trigger">
@@ -77,15 +254,15 @@
                 </div>
                 <div class="p-10 pt-8 grid [grid-template-rows:_auto_auto_1fr]">
                     <h3 class="text-secondary text-lg font-bold slide-in-top slide-in-trigger">{{ service.title }}</h2>
-                    <p class="text-gray-600 mb-8 mt-6 slide-in-top slide-in-trigger">{{ service.description }}</p>
-                    <div class="grid content-end gap-3 slide-in-top slide-in-trigger">
-                        {% for link in service.links %}
-                        <a href="{{ link.url }}" class="grid">
-                            <c-ui.button text="{{ link.text }}" variant="outline" size="md"
-                                icon="fas fa-arrow-right" />
-                        </a>
-                        {% endfor %}
-                    </div>
+                        <p class="text-gray-600 mb-8 mt-6 slide-in-top slide-in-trigger">{{ service.description }}</p>
+                        <div class="grid content-end gap-3 slide-in-top slide-in-trigger">
+                            {% for link in service.links %}
+                            <a href="{{ link.url }}" class="grid">
+                                <c-ui.button text="{{ link.text }}" variant="outline" size="md"
+                                    icon="fas fa-arrow-right" />
+                            </a>
+                            {% endfor %}
+                        </div>
                 </div>
             </div>
             {% endfor %}
